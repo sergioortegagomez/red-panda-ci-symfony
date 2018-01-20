@@ -1,0 +1,3 @@
+[submodule "ci-scripts/common"]
+	path = ci-scripts/common
+	url = https://github.com/pedroamador/ci-scripts
