@@ -38,8 +38,10 @@
         "symfony/polyfill-php56": "*"
     },
     "scripts": {
-        "auto-scripts": [
-        ],
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install --symlink --relative %PUBLIC_DIR%": "symfony-cmd"
+        },
         "post-install-cmd": [
             "@auto-scripts"
         ],
@@ -52,7 +54,7 @@
     },
     "extra": {
         "symfony": {
-            "id": "",
+            "id": "01C49W3RWTBH64JWE24Y198W73",
             "allow-contrib": false
         }
     }
