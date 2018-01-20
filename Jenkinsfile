@@ -8,7 +8,7 @@ cfg = jplConfig('red-panda-ci-symfony4','backend','', [hipchat: '', slack: '', e
 // The pipeline
 pipeline {
 
-    agent none
+    agent docker
 
     stages {
         stage ('Initialize') {
