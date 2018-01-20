@@ -1,0 +1,15 @@
+default: -p poltergeist
+html: --format --out reports/test-report.html
+bvt: --tags @test
+browserstack : DRIVER=browserstack
+testingbot: DRIVER=testingbot
+poltergeist : DRIVER=poltergeist
+selenium : DRIVER=selenium
+appium : DRIVER=appium
+api : DRIVER=poltergeist --tags @api
+appium_android_web : DRIVER=appium_android_web
+sauce : DRIVER=sauce
+chrome: DRIVER=chrome
+parallel_html: --format html --out reports/process<%= ENV['TEST_ENV_NUMBER'] %>.html
+pretty: -f pretty
+parallel: --format pretty -p poltergeist --profile parallel_html --format ParallelTests::Cucumber::FailuresLogger --out cucumber_failures.log
