@@ -16,6 +16,9 @@ docker-compose up -d --force-recreate || exit $?
 docker-compose exec -T php composer install
 returnValue=$((returnValue + $?))
 
+docker-compose exec -T php bin/console doctrine:schema:update --force
+returnValue=$((returnValue + $?))
+
 docker-compose exec -T test-runner rm -rf /opt/bddfire/ci-scripts/test/cucumber/reports
 returnValue=$((returnValue + $?))
 docker-compose exec -T test-runner mkdir /opt/bddfire/ci-scripts/test/cucumber/reports
