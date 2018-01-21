@@ -21,7 +21,7 @@ services:
     nginx:
         build: nginx
         ports:
-            - 20080:80
+            - 80:80
         volumes_from:
             - php
         volumes:
