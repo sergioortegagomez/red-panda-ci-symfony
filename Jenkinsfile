@@ -26,7 +26,8 @@ pipeline {
         stage('Test') {
             agent { label 'docker' }
             steps {
-                jplSonarScanner(cfg)
+                sh 'bin/test.sh'
+                // jplSonarScanner(cfg)
             }
         }        
     }
