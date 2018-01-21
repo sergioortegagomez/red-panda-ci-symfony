@@ -26,3 +26,8 @@ services:
             - php
         volumes:
             - ./logs/nginx/:/var/log/nginx
+    test-runner:
+        build: ci-scripts/test/cucumber
+        volumes:
+            - ./:/opt/bddfire
+        command: sleep 3000
