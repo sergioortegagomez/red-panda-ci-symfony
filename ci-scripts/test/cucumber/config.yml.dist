@@ -1,4 +1,4 @@
-baseurl: https://nginx:20080
+baseurl: http://nginx
 
 take_screenshots: true
 screenshot_delay: 1
