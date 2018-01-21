@@ -21,8 +21,13 @@ services:
     nginx:
         build: nginx
         ports:
-            - 80:80
+            - 20080:80
         volumes_from:
             - php
         volumes:
             - ./logs/nginx/:/var/log/nginx
+    test-runner:
+        build: ci-scripts/test/cucumber
+        volumes:
+            - ./:/opt/bddfire
+        command: sleep 3000

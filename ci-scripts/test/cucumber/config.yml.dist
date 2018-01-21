@@ -1,4 +1,4 @@
-baseurl: https://localhost
+baseurl: http://nginx
 
 take_screenshots: true
 screenshot_delay: 1
