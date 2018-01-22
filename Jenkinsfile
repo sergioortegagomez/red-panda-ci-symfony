@@ -14,9 +14,10 @@ pipeline {
         stage ('Initialize') {
             agent { label 'docker' }
             steps  {
+                deleteDir()
                 jplStart(cfg)
             }
-        }        
+        }
         stage ('Build') {
             agent { label 'docker' }
             steps  {
@@ -29,7 +30,7 @@ pipeline {
                 jplSonarScanner(cfg)
                 sh 'bin/test.sh'
             }
-        }        
+        }
         stage ('Release confirm') {
             when { branch 'release/v*' }
             steps {
