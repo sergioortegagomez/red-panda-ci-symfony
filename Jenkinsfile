@@ -1,6 +1,6 @@
 #!groovy
 
-@Library('github.com/red-panda-ci/jenkins-pipeline-library@v2.6.0') _
+@Library('github.com/red-panda-ci/jenkins-pipeline-library@v2.6.2') _
 
 // Initialize global config
 cfg = jplConfig('red-panda-ci-symfony4','backend')
