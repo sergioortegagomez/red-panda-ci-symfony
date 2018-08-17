@@ -1,3 +1,17 @@
+<a name="0.3.0"></a>
+# 0.3.0 (2018-08-17)
+
+
+### Build
+
+* Update to jpl v2.6.3 ([d2fc1cd09909b35858dd181ad930ffdb30f42e60](https://github.com/red-panda-ci/red-panda-ci-symfony/commit/d2fc1cd09909b35858dd181ad930ffdb30f42e60))
+
+### Update
+
+* Lock files update ([a67728df8e783ecfe85d87dddf8b48c2287bc11e](https://github.com/red-panda-ci/red-panda-ci-symfony/commit/a67728df8e783ecfe85d87dddf8b48c2287bc11e))
+
+
+
 <a name="0.2.0"></a>
 # 0.2.0 (2018-01-22)
 
@@ -5,6 +19,7 @@
 ### Build
 
 * Start CI pipeline within a clean directory ([51d2049de8bdcc49a2343273051ccccd02778f42](https://github.com/red-panda-ci/red-panda-ci-symfony/commit/51d2049de8bdcc49a2343273051ccccd02778f42))
+* Update CHANGELOG.md to v0.2.0 with Red Panda JPL ([7a86e7edd744b4f366d75c1e6fd1263910fb48fe](https://github.com/red-panda-ci/red-panda-ci-symfony/commit/7a86e7edd744b4f366d75c1e6fd1263910fb48fe))
 
 
 
