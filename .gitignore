@@ -3,3 +3,5 @@ source/vendor
 /ci-scripts/test/cucumber/vendor
 /ci-scripts/test/cucumber/config.yml
 /ci-scripts/test/cucumber/node_modules
+/.data/
+/logs/
