@@ -27,9 +27,22 @@ pipeline {
             agent { label 'docker' }
             steps {
                 sh 'bin/test.sh'
-                // jplSonarScanner(cfg)
+                jplSonarScanner(cfg)
             }
-        }        
+        }
+        stage ('Release confirm') {
+            when { branch 'release/v*' }
+            steps {
+                jplPromoteBuild(cfg)
+            }
+        }
+        stage ('Release finish') {
+            agent { label 'docker' }
+            when { branch 'release/v*' }
+            steps {
+                jplCloseRelease(cfg)
+            }
+        }
     }
 
     post {
