@@ -16,10 +16,16 @@ I used the submodule [ci-script](https://github.com/red-panda-ci/ci-scripts) for
 git clone https://github.com/sergioortegagomez/red-panda-ci-symfony
 ```
 
-and enter to directory red-panda-ci-symfony
+enter to directory red-panda-ci-symfony
 
 ```console
 cd red-panda-ci-symfony
+```
+
+and copy .env.dist file to .env
+
+```console
+cp .env.dist .env
 ```
 
 ## How to up?
