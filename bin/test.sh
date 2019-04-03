@@ -12,7 +12,8 @@ returnValue=0
 restorePermissions
 
 cp ci-scripts/test/cucumber/config.yml.dist ci-scripts/test/cucumber/config.yml
-cp source/.env.dist source/.env
+cp -n .env.dist .env
+cp -n source/.env.dist source/.env
 docker-compose up -d --force-recreate || exit $?
 docker-compose exec -T php composer install
 returnValue=$((returnValue + $?))
