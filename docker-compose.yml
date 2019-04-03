@@ -4,7 +4,7 @@ services:
     db:
         image: mysql:5.7
         volumes:
-            - "./.data/db:/var/lib/mysql"
+            - dbdata:/var/lib/mysql
         environment:
             MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
             MYSQL_DATABASE: ${MYSQL_DATABASE}
@@ -17,7 +17,8 @@ services:
                 TIMEZONE: ${TIMEZONE}
         volumes:
             - ./source:/var/www/symfony
-            - ./logs/symfony:/var/www/symfony/app/logs
+            - phplogs:/var/www/symfony/app/logs
+            - phpvendors:/var/www/symfony/vendor/
     nginx:
         build: nginx
         ports:
@@ -25,9 +26,15 @@ services:
         volumes_from:
             - php
         volumes:
-            - ./logs/nginx/:/var/log/nginx
+            - nginxlogs:/var/log/nginx
     test-runner:
         build: ci-scripts/test/cucumber
         volumes:
             - ./:/opt/bddfire
         command: sleep 3000
+
+volumes:
+    dbdata:
+    phplogs:
+    phpvendors:
+    nginxlogs:
