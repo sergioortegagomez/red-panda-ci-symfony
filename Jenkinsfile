@@ -1,9 +1,9 @@
 #!groovy
 
-@Library('github.com/red-panda-ci/jenkins-pipeline-library@v2.6.2') _
+@Library('github.com/red-panda-ci/jenkins-pipeline-library') _
 
 // Initialize global config
-cfg = jplConfig('red-panda-ci-symfony4','backend')
+cfg = jplConfig('red-panda-ci-symfony4','backend','', [hipchat: '', slack: '', email:''])
 
 // The pipeline
 pipeline {
@@ -14,10 +14,9 @@ pipeline {
         stage ('Initialize') {
             agent { label 'docker' }
             steps  {
-                deleteDir()
                 jplStart(cfg)
             }
-        }
+        }        
         stage ('Build') {
             agent { label 'docker' }
             steps  {
@@ -27,8 +26,8 @@ pipeline {
         stage('Test') {
             agent { label 'docker' }
             steps {
-                jplSonarScanner(cfg)
                 sh 'bin/test.sh'
+                jplSonarScanner(cfg)
             }
         }
         stage ('Release confirm') {
