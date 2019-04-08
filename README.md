@@ -12,8 +12,10 @@ I used the submodule [ci-script](https://github.com/red-panda-ci/ci-scripts) for
 
 ## Instalation
 
+Clone the repository with `--recursive` option to get the submodule
+
 ```console
-git clone https://github.com/sergioortegagomez/red-panda-ci-symfony
+git clone https://github.com/sergioortegagomez/red-panda-ci-symfony --recursive
 ```
 
 enter to directory red-panda-ci-symfony
